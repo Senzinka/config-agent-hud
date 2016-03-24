@@ -17,14 +17,14 @@
       <div data-role="content">
         <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="false">
           <div data-role="collapsible">
-            <h3>General</h3>
+            <h3>Empty bars</h3>
     
             <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
-              <legend>Option 1</legend>
-                <input name="key0" id="key0-0" data-type="int" value="0" checked="checked" type="checkbox">
-                <label for="key0-0">Choice 1</label>
-                <input name="key0" id="key0-1" data-type="int" value="1" type="radio">
-                <label for="key0-1">Choice 2</label>
+              <legend>Look and feel</legend>
+                <input name="AppKeyEmptyBarFilled" id="AppKeyEmptyBarFilled-id" data-type="int" type="checkbox">
+                <label for="AppKeyEmptyBarFilled-id">Outlined</label>
+                <input name="AppKeyEmptyBarSameColor" id="AppKeyEmptyBarSameColor-id" data-type="int" type="checkbox">
+                <label for="AppKeyEmptyBarSameColor-id"">Keep outline color</label>
             </fieldset>
 
             <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
@@ -53,21 +53,21 @@
     <script>
       function saveOptions() {
         var options = {
-          'option0':     Number( $("input[name=key0]:checked").val() ),
-      	  'option1':     Number( $("input[name=key1]:checked").val() )
+          'AppKeyEmptyBarFilled':     Number( $("input[name=AppKeyEmptyBarFilled]:checked").val() ),
+      	  'AppKeyEmptyBarSameColor':     Number( $("input[name=AppKeyEmptyBarSameColor]:checked").val() )
         }
         return options;
       }
       $().ready(function() {
         if (typeof window.localStorage !== "undefined") {
          	console.log("Not undefined :)");
-          if (window.localStorage.tutorial) {
-            ls_pto = JSON.parse(window.localStorage.tutorial);
+          if (window.localStorage.agenthud) {
+            ls_pto = JSON.parse(window.localStorage.agenthud);
             // the Pebble webview dies on the next line...
-            $("input[name=key0][id=key0-"+ls_pto["option0"]+"]").prop('checked',true);
-            $("input[name=key0]").checkboxradio('refresh');
-            $("input[name=key1][id=key1-"+ls_pto["option1"]+"]").prop('checked',true);
-            $("input[name=key1]").checkboxradio('refresh');
+            $("input[name=AppKeyEmptyBarFilled][id=AppKeyEmptyBarFilled-id]").prop('checked',true);
+            $("input[name=AppKeyEmptyBarFilled]").checkboxradio('refresh');
+            $("input[name=AppKeyEmptyBarSameColor][id=AppKeyEmptyBarSameColor-id]").prop('checked',true);
+            $("input[name=AppKeyEmptyBarSameColor]").checkboxradio('refresh');
           }
         }
        
@@ -80,7 +80,7 @@
           console.log("Submit");
           ls_pto = JSON.stringify(saveOptions());
           if (typeof window.localStorage !== "undefined") {
-            window.localStorage.tutorial = ls_pto;
+            window.localStorage.agenthud = ls_pto;
           }
           
           var location = "pebblejs://close#" + ls_pto;
