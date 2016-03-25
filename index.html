@@ -54,7 +54,7 @@
       function saveOptions() {
         var options = {
           'AppKeyEmptyBarFilled':     Number( $("input[name=AppKeyEmptyBarFilled]").prop("checked") ? 1 : 0 ),
-      	  'AppKeyEmptyBarSameColor':     Number( $("input[name=AppKeyEmptyBarSameColor]:checked").val() )
+      	  'AppKeyEmptyBarSameColor':     Number( $("input[name=AppKeyEmptyBarSameColor]").prop("checked") ? 1 : 0 )
         }
         return options;
       }
@@ -64,7 +64,7 @@
           if (window.localStorage.agenthud) {
             ls_pto = JSON.parse(window.localStorage.agenthud);
             // the Pebble webview dies on the next line...
-            $("input[name=AppKeyEmptyBarFilled][id=AppKeyEmptyBarFilled-id"+ls_pto["AppKeyEmptyBarFilled"]+"]").prop('checked',false);
+            $("input[name=AppKeyEmptyBarFilled][id=AppKeyEmptyBarFilled-id]").prop('checked', ls_pto["AppKeyEmptyBarFilled"]);
             $("input[name=AppKeyEmptyBarFilled]").checkboxradio('refresh');
             $("input[name=AppKeyEmptyBarSameColor][id=AppKeyEmptyBarSameColor-id"+ls_pto["AppKeyEmptyBarSameColor"]+"]").prop('checked',false);
             $("input[name=AppKeyEmptyBarSameColor]").checkboxradio('refresh');
