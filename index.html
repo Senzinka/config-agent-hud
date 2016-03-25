@@ -53,7 +53,7 @@
     <script>
       function saveOptions() {
         var options = {
-          'AppKeyEmptyBarFilled':     Number( $("input[name=AppKeyEmptyBarFilled]:checked:enabled") ),
+          'AppKeyEmptyBarFilled':     Number( $("AppKeyEmptyBarFilled").prop("checked") ? 1 : 0; ),
       	  'AppKeyEmptyBarSameColor':     Number( $("input[name=AppKeyEmptyBarSameColor]:checked").val() )
         }
         return options;
