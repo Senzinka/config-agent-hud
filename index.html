@@ -24,7 +24,7 @@
                 <input name="AppKeyEmptyBarFilled" id="AppKeyEmptyBarFilled-id" data-type="int" type="checkbox">
                 <label for="AppKeyEmptyBarFilled-id">Filled</label>
                 <input name="AppKeyEmptyBarSameColor" id="AppKeyEmptyBarSameColor-id" data-type="int" type="checkbox">
-                <label for="AppKeyEmptyBarSameColor-id"">Use fill color</label>
+                <label for="AppKeyEmptyBarSameColor-id"">Use segment color for outlines</label>
             </fieldset>
 
             <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
@@ -53,7 +53,7 @@
     <script>
       function saveOptions() {
         var options = {
-          'AppKeyEmptyBarFilled':     Number( input[name=AppKeyEmptyBarFilled]:checked:enabled),
+          'AppKeyEmptyBarFilled':     Number( $("input[name=AppKeyEmptyBarFilled]:checked:enabled"),
       	  'AppKeyEmptyBarSameColor':     Number( $("input[name=AppKeyEmptyBarSameColor]:checked").val() )
         }
         return options;
