@@ -15,34 +15,44 @@ function submitHandler() {
 }
 
 function loadOptions() {
+  var $AppKeyTwentyFourHourFormat = $('#AppKeyTwentyFourHourFormat');
   var $AppKeyBackgroundColor = $('#AppKeyBackgroundColor');
-  var $timeFormatCheckbox = $('#timeFormatCheckbox');
+  var $AppKeyLabelColor = $('#AppKeyLabelColor');
+  var $AppKeyValueColor = $('#AppKeyValueColor');
   var $AppKeyEmptyBarFilled = $('#AppKeyEmptyBarFilled');
   var $AppKeyEmptyBarSameColor = $('#AppKeyEmptyBarSameColor');
 
   if (localStorage.agenthud) {
+    $AppKeyTwentyFourHourFormat[0].checked = localStorage.agenthud.AppKeyTwentyFourHourFormat === 'true';
     $AppKeyBackgroundColor[0].value = localStorage.agenthud.AppKeyBackgroundColor;
-    $timeFormatCheckbox[0].checked = localStorage.agenthud.twentyFourHourFormat === 'true';
+    $AppKeyLabelColor[0].value = localStorage.agenthud.AppKeyLabelColor;
+    $AppKeyValueColor[0].value = localStorage.agenthud.AppKeyValueColor;
     $AppKeyEmptyBarFilled[0].checked = localStorage.agenthud.AppKeyEmptyBarFilled === 'true';
     $AppKeyEmptyBarSameColor[0].checked = localStorage.agenthud.AppKeyEmptyBarSameColor === 'true';
   }
 }
 
 function getAndStoreConfigData() {
+  var $AppKeyTwentyFourHourFormat = $('#AppKeyTwentyFourHourFormat');
   var $AppKeyBackgroundColor = $('#AppKeyBackgroundColor');
-  var $timeFormatCheckbox = $('#timeFormatCheckbox');
+  var $AppKeyLabelColor = $('#AppKeyLabelColor');
+  var $AppKeyValueColor = $('#AppKeyValueColor');
   var $AppKeyEmptyBarFilled = $('#AppKeyEmptyBarFilled');
   var $AppKeyEmptyBarSameColor = $('#AppKeyEmptyBarSameColor');
 
   var options = {
+    AppKeyTwentyFourHourFormat: $AppKeyTwentyFourHourFormat[0].checked,
     AppKeyBackgroundColor: $AppKeyBackgroundColor.val(),
-    twentyFourHourFormat: $timeFormatCheckbox[0].checked,
+    AppKeyLabelColor: $AppKeyLabelColor.val(),
+    AppKeyValueColor: $AppKeyValueColor.val(),
     AppKeyEmptyBarFilled: $AppKeyEmptyBarFilled[0].checked,
     AppKeyEmptyBarSameColor: $AppKeyEmptyBarSameColor[0].checked
   };
 
+  localStorage.agenthud.AppKeyTwentyFourHourFormat = options.AppKeyTwentyFourHourFormat;
   localStorage.agenthud.AppKeyBackgroundColor = options.AppKeyBackgroundColor;
-  localStorage.agenthud.twentyFourHourFormat = options.twentyFourHourFormat;
+  localStorage.agenthud.AppKeyLabelColor = options.AppKeyLabelColor;
+  localStorage.agenthud.AppKeyValueColor = options.AppKeyValueColor;
   localStorage.agenthud.AppKeyEmptyBarFilled = options.AppKeyEmptyBarFilled;
   localStorage.agenthud.AppKeyEmptyBarSameColor = options.AppKeyEmptyBarSameColor;
 
