@@ -9,122 +9,62 @@
   </head>
   
   <body>
-  <div class='item-container'>
-    <h1 class='title'>Agent HUD<br>Configuration Page</h1>
-  </div>
-
-  <div class='item-container'>
-    <div class='item-container-content'>
-      <div class='item'>
-        Use this configuration page to choose the settings you would like
-        applied to this app.
-      </div>
+    <div class='item-container'>
+      <h1 class='title'>Agent HUD<br>Configuration Page</h1>
     </div>
-  </div>
-
-  <div class='item-container'>
-    <div class='item-container-header'>General</div>
-    <div class='item-container-content'>
-      <label class='item'>
-        24-Hour Format
-        <input id='timeFormatCheckbox' type='checkbox' class='item-checkbox' checked>
-      </label>
-      <label class='item'>
-        Background Color
-        <input id='backgroundColorPicker' type='text' class='item-color item-color-sunny' value='#000000'>
-      </label>
-      <label class='item'>
-        Label Color
-        <input id='labelColorPicker' type='text' class='item-color item-color-sunny' value='#000000'>
-      </label>
-      <label class='item'>
-        Value Color
-        <input id='valueColorPicker' type='text' class='item-color item-color-sunny' value='#000000'>
-      </label>
-    </div>
-    <div class='item-container-header'>Bar colors</div>
-    <div class='item-container-content'>
-      <label class='item'>
-        Filled
-        <input id='AppKeyEmptyBarFilled' type='checkbox' class='item-checkbox' checked>
-      </label>
-    </div>
-    <div class='item-container-content'>
-      <label class='item'>
-        Keep outline colors
-        <input id='AppKeyEmptyBarSameColor' type='checkbox' class='item-checkbox'>
-      </label>
-    </div>
-   <div class='item-container-footer'>
-      These settings only change on the watch after you click save.
-    </div>
-  </div>
-
-  <div class='item-container'>
-    <div class='button-container'>
-      <input id='submitButton' type='button' class='item-button' value='SUBMIT'>
-    </div>
-  </div>
-<!--      <div data-role="content">
-        <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="false">
-          <div data-role="collapsible">
-            <h3>Empty bars</h3>
-    
-            <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
-              <legend>Look and feel</legend>
-                <input name="AppKeyEmptyBarFilled" id="AppKeyEmptyBarFilled-id" data-type="int" type="checkbox">
-                <label for="AppKeyEmptyBarFilled-id">Filled</label>
-                <input name="AppKeyEmptyBarSameColor" id="AppKeyEmptyBarSameColor-id" data-type="int" type="checkbox">
-                <label for="AppKeyEmptyBarSameColor-id"">Use segment color for outlines</label>
-            </fieldset>
-          </div>
-      
+  
+    <div class='item-container'>
+      <div class='item-container-content'>
+        <div class='item'>
+          Use this configuration page to choose the settings you would like
+          applied to this app.
         </div>
       </div>
--->    
-    <script>
-      function saveOptions() {
-        var options = {
-          'AppKeyEmptyBarFilled':     Number( $("input[name=AppKeyEmptyBarFilled]").prop("checked") ? 1 : 0 ),
-      	  'AppKeyEmptyBarSameColor':     Number( $("input[name=AppKeyEmptyBarSameColor]").prop("checked") ? 1 : 0 )
-        }
-        return options;
-      }
-      $().ready(function() {
-        if (typeof window.localStorage !== "undefined") {
-         	console.log("Not undefined :)");
-          if (window.localStorage.agenthud) {
-            ls_pto = JSON.parse(window.localStorage.agenthud);
-            // the Pebble webview dies on the next line...
-            $("input[name=AppKeyEmptyBarFilled][id=AppKeyEmptyBarFilled-id]").prop('checked', ls_pto["AppKeyEmptyBarFilled"]);
-            $("input[name=AppKeyEmptyBarFilled]").checkboxradio('refresh');
-            $("input[name=AppKeyEmptyBarSameColor][id=AppKeyEmptyBarSameColor-id]").prop('checked', ls_pto["AppKeyEmptyBarSameColor"]);
-            $("input[name=AppKeyEmptyBarSameColor]").checkboxradio('refresh');
-          }
-        }
-       
-        $("#b-cancel").click(function() {
-          console.log("Cancel");
-          document.location = "pebblejs://close";
-        });
-        
-        $("#b-submit").click(function() {
-          console.log("Submit");
-          ls_pto = JSON.stringify(saveOptions());
-          if (typeof window.localStorage !== "undefined") {
-            window.localStorage.agenthud = ls_pto;
-          }
-          
-          var location = "pebblejs://close#" + ls_pto;
-          console.log("Warping to: " + location);
-          console.log(location);
-          document.location = location;
-        });
-      });
-    </script>
+    </div>
+  
+    <div class='item-container'>
+      <div class='item-container-header'>General</div>
+      <div class='item-container-content'>
+        <label class='item'>
+          24-Hour Format
+          <input id='timeFormatCheckbox' type='checkbox' class='item-checkbox' checked>
+        </label>
+        <label class='item'>Background Color
+          <input id='AppKeyBackgroundColor' type='text' class='item-color item-color-sunny' value='#000000'>
+        </label>
+        <label class='item'>Label Color
+          <input id='AppKeyLabelColor' type='text' class='item-color item-color-sunny' value='#000000'>
+        </label>
+        <label class='item'>Value Color
+          <input id='AppKeyValueColor' type='text' class='item-color item-color-sunny' value='#000000'>
+        </label>
+      </div>
+      
+      <div class='item-container-header'>Bar colors</div>
+      <div class='item-container-content'>
+        <label class='item'>Filled
+          <input id='AppKeyEmptyBarFilled' type='checkbox' class='item-checkbox' checked>
+        </label>
+      </div>
+      <div class='item-container-content'>
+        <label class='item'>Keep outline colors
+          <input id='AppKeyEmptyBarSameColor' type='checkbox' class='item-checkbox'>
+        </label>
+      </div>
+      
+        <div class='item-container-footer'>
+          These settings only change on the watch after you click save.
+        </div>
+      </div>
     
-    <script src='pebble-slate/dist/js/slate.min.js'></script>
-    <script src='js/main.js'></script>
-
-  </body>
+      <div class='item-container'>
+        <div class='button-container'>
+          <input id='submitButton' type='button' class='item-button' value='SUBMIT'>
+        </div>
+      </div>
+  
+      <script src='pebble-slate/dist/js/slate.min.js'></script>
+      <script src='js/main.js'></script>
+  
+    </body>
 </html>
