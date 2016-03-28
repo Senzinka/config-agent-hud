@@ -15,13 +15,13 @@ function submitHandler() {
 }
 
 function loadOptions() {
-  var $backgroundColorPicker = $('#backgroundColorPicker');
+  var $AppKeyBackgroundColor = $('#AppKeyBackgroundColor');
   var $timeFormatCheckbox = $('#timeFormatCheckbox');
   var $AppKeyEmptyBarFilled = $('#AppKeyEmptyBarFilled');
   var $AppKeyEmptyBarSameColor = $('#AppKeyEmptyBarSameColor');
 
   if (localStorage.agenthud) {
-    $backgroundColorPicker[0].value = localStorage.agenthud.backgroundColor;
+    $AppKeyBackgroundColor[0].value = localStorage.agenthud.AppKeyBackgroundColor;
     $timeFormatCheckbox[0].checked = localStorage.agenthud.twentyFourHourFormat === 'true';
     $AppKeyEmptyBarFilled[0].checked = localStorage.agenthud.AppKeyEmptyBarFilled === 'true';
     $AppKeyEmptyBarSameColor[0].checked = localStorage.agenthud.AppKeyEmptyBarSameColor === 'true';
@@ -41,10 +41,10 @@ function getAndStoreConfigData() {
     AppKeyEmptyBarSameColor: $AppKeyEmptyBarSameColor[0].checked
   };
 
-  localStorage.backgroundColor = options.backgroundColor;
-  localStorage.twentyFourHourFormat = options.twentyFourHourFormat;
-  localStorage.AppKeyEmptyBarFilled = options.AppKeyEmptyBarFilled;
-  localStorage.AppKeyEmptyBarSameColor = options.AppKeyEmptyBarSameColor;
+  localStorage.agenthud.AppKeyBackgroundColor = options.AppKeyBackgroundColor;
+  localStorage.agenthud.twentyFourHourFormat = options.twentyFourHourFormat;
+  localStorage.agenthud.AppKeyEmptyBarFilled = options.AppKeyEmptyBarFilled;
+  localStorage.agenthud.AppKeyEmptyBarSameColor = options.AppKeyEmptyBarSameColor;
 
   console.log('Got options: ' + JSON.stringify(options));
   return options;
