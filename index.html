@@ -3,39 +3,47 @@
   <head>
     <title>Agent HUD Settings</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
-    
+
     <link rel='stylesheet' type='text/css' href='/pebble-slate/dist/css/slate.min.css'>
     <link rel='stylesheet' type='text/css' href='/css/style.css'>
-    <script src='/pebble-slate/dist/js/slate.min.js'></script>
-    <script src='/js/main.js'></script>
   </head>
   
   <body>
-    <div class='item-container'>
-      <div class='item-container-header'>Agent HUD Settings</div>
-      <div class='item-container-content'>
-        <label class='item'>
-          Background Color
-          <input id='backgroundColorPicker' type='text' class='item-color item-color-sunny' value='#000000'>
-        </label>
-        <label class='item'>
-          24-Hour Format
-          <input id='timeFormatCheckbox' type='checkbox' class='item-checkbox' checked>
-        </label>
-      </div>
-      <div class='item-container-footer'>
-        These settings only change on the watch after you click save.
-      </div>
-    </div>
-    <div class='item-container'>
-      <div class='button-container'>
-        <input id='submitButton' type='button' class='item-button' value='SUBMIT'>
-      </div>
-    </div>
+  <div class='item-container'>
+    <h1 class='title'>Watchface<br>Configuration Page</h1>
+  </div>
 
+  <div class='item-container'>
+    <div class='item-container-content'>
+      <div class='item'>
+        Use this configuration page to choose the settings you would like
+        applied to this app.
+      </div>
+    </div>
+  </div>
+
+  <div class='item-container'>
+    <div class='item-container-header'>Customizability</div>
+    <div class='item-container-content'>
+      <label class='item'>
+        Background Color
+        <input id='backgroundColorPicker' type='text' class='item-color item-color-sunny' value='#000000'>
+      </label>
+      <label class='item'>
+        24-Hour Format
+        <input id='timeFormatCheckbox' type='checkbox' class='item-checkbox' checked>
+      </label>
+    </div>
+    <div class='item-container-footer'>
+      These settings only change on the watch after you click save.
+    </div>
+  </div>
+
+  <div class='item-container'>
+    <div class='button-container'>
+      <input id='submitButton' type='button' class='item-button' value='SUBMIT'>
+    </div>
+  </div>
 <!--      <div data-role="content">
         <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="false">
           <div data-role="collapsible">
@@ -93,5 +101,9 @@
         });
       });
     </script>
+    
+    <script src='/pebble-slate/dist/js/slate.min.js'></script>
+    <script src='/js/main.js'></script>
+
   </body>
 </html>
