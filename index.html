@@ -15,27 +15,33 @@
   </head>
   
   <body>
+    <div class='item-container'>
+      <div class='item-container-header'>Customizability</div>
+      <div class='item-container-content'>
+        <label class='item'>
+          Background Color
+          <input id='backgroundColorPicker' type='text' class='item-color item-color-sunny' value='#000000'>
+        </label>
+        <label class='item'>
+          24-Hour Format
+          <input id='timeFormatCheckbox' type='checkbox' class='item-checkbox' checked>
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        These settings only change on the watch after you click save.
+      </div>
+    </div>
+    <div class='item-container'>
+      <div class='button-container'>
+        <input id='submitButton' type='button' class='item-button' value='SUBMIT'>
+      </div>
+    </div>
+
     <div data-role="page" id="main">
       <div data-role="header" class="jqm-header">
         <h1>Agent HUD Settings</h1>
       </div>
 
-      <div class='item-container'>
-        <div class='item-container-header'>Customizability</div>
-        <div class='item-container-content'>
-          <label class='item'>
-            Background Color
-            <input id='backgroundColorPicker' type='text' class='item-color item-color-sunny' value='#000000'>
-          </label>
-          <label class='item'>
-            24-Hour Format
-            <input id='timeFormatCheckbox' type='checkbox' class='item-checkbox' checked>
-          </label>
-        </div>
-        <div class='item-container-footer'>
-          These settings only change on the watch after you click save.
-        </div>
-      </div>
       <div data-role="content">
         <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="false">
           <div data-role="collapsible">
