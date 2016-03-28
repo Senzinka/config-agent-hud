@@ -17,24 +17,34 @@ function submitHandler() {
 function loadOptions() {
   var $backgroundColorPicker = $('#backgroundColorPicker');
   var $timeFormatCheckbox = $('#timeFormatCheckbox');
+  var $AppKeyEmptyBarFilled = $('#AppKeyEmptyBarFilled');
+  var $AppKeyEmptyBarSameColor = $('#AppKeyEmptyBarSameColor');
 
-  if (localStorage.backgroundColor) {
-    $backgroundColorPicker[0].value = localStorage.backgroundColor;
-    $timeFormatCheckbox[0].checked = localStorage.twentyFourHourFormat === 'true';
+  if (localStorage.agenthud) {
+    $backgroundColorPicker[0].value = localStorage.agenthud.backgroundColor;
+    $timeFormatCheckbox[0].checked = localStorage.agenthud.twentyFourHourFormat === 'true';
+    $AppKeyEmptyBarFilled[0].checked = localStorage.agenthud.AppKeyEmptyBarFilled === 'true';
+    $AppKeyEmptyBarSameColor[0].checked = localStorage.agenthud.AppKeyEmptyBarSameColor === 'true';
   }
 }
 
 function getAndStoreConfigData() {
   var $backgroundColorPicker = $('#backgroundColorPicker');
   var $timeFormatCheckbox = $('#timeFormatCheckbox');
+  var $AppKeyEmptyBarFilled = $('#AppKeyEmptyBarFilled');
+  var $AppKeyEmptyBarSameColor = $('#AppKeyEmptyBarSameColor');
 
   var options = {
     backgroundColor: $backgroundColorPicker.val(),
-    twentyFourHourFormat: $timeFormatCheckbox[0].checked
+    twentyFourHourFormat: $timeFormatCheckbox[0].checked,
+    AppKeyEmptyBarFilled: $AppKeyEmptyBarFilled[0].checked,
+    AppKeyEmptyBarSameColor: $AppKeyEmptyBarSameColor[0].checked
   };
 
   localStorage.backgroundColor = options.backgroundColor;
   localStorage.twentyFourHourFormat = options.twentyFourHourFormat;
+  localStorage.AppKeyEmptyBarFilled = options.AppKeyEmptyBarFilled;
+  localStorage.AppKeyEmptyBarSameColor = options.AppKeyEmptyBarSameColor;
 
   console.log('Got options: ' + JSON.stringify(options));
   return options;
