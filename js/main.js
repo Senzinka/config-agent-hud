@@ -29,13 +29,13 @@ function loadOptions() {
 }
 
 function getAndStoreConfigData() {
-  var $backgroundColorPicker = $('#backgroundColorPicker');
+  var $AppKeyBackgroundColor = $('#AppKeyBackgroundColor');
   var $timeFormatCheckbox = $('#timeFormatCheckbox');
   var $AppKeyEmptyBarFilled = $('#AppKeyEmptyBarFilled');
   var $AppKeyEmptyBarSameColor = $('#AppKeyEmptyBarSameColor');
 
   var options = {
-    backgroundColor: $backgroundColorPicker.val(),
+    AppKeyBackgroundColor: $AppKeyBackgroundColor.val(),
     twentyFourHourFormat: $timeFormatCheckbox[0].checked,
     AppKeyEmptyBarFilled: $AppKeyEmptyBarFilled[0].checked,
     AppKeyEmptyBarSameColor: $AppKeyEmptyBarSameColor[0].checked
