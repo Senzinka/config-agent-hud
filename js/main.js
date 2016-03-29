@@ -22,7 +22,7 @@ function loadOptions() {
   var $AppKeyEmptyBarFilled = $('#AppKeyEmptyBarFilled');
   var $AppKeyEmptyBarSameColor = $('#AppKeyEmptyBarSameColor');
 
-  if (localStorage.agenthud) {
+  if (localStorage) {
     $AppKeyTwentyFourHourFormat[0].checked = localStorage.agenthud.AppKeyTwentyFourHourFormat === 'true';
     $AppKeyBackgroundColor[0].value = localStorage.agenthud.AppKeyBackgroundColor;
     $AppKeyLabelColor[0].value = localStorage.agenthud.AppKeyLabelColor;
