@@ -32,41 +32,39 @@
           Colors
         </div>
         <label class='item'>Background Color
-          <input id='AppKeyBackgroundColor' type='text' class='item-color item-color-sunny' value='#000000'>
+          <input id='AppKeyBackgroundColor' type='text' class='item-color item-color-sunny'>
         </label>
         <label class='item'>Label Color
-          <input id='AppKeyLabelColor' type='text' class='item-color item-color-sunny' value='#000000'>
+          <input id='AppKeyLabelColor' type='text' class='item-color item-color-sunny'>
         </label>
         <label class='item'>Value Color
-          <input id='AppKeyValueColor' type='text' class='item-color item-color-sunny' value='#000000'>
+          <input id='AppKeyValueColor' type='text' class='item-color item-color-sunny'>
         </label>
       </div>
       
       <div class='item-container-header'>Bar colors</div>
       <div class='item-container-content'>
         <label class='item'>Filled
-          <input id='AppKeyEmptyBarFilled' type='checkbox' class='item-checkbox' checked>
+          <input id='AppKeyEmptyBarFilled' type='checkbox' class='item-checkbox'>
         </label>
-      </div>
-      <div class='item-container-content'>
         <label class='item'>Keep outline colors
-          <input id='AppKeyEmptyBarSameColor' type='checkbox' class='item-checkbox'>
+          <input id='AppKeyEmptyBarSameColor' type='checkbox' class='item-checkbox' enabled='$('#AppKeyEmptyBarFilled')[0].checked'>
         </label>
       </div>
       
-        <div class='item-container-footer'>
-          These settings only change on the watch after you click SAVE.
-        </div>
+      <div class='item-container-footer'>
+        These settings only change on the watch after you click SAVE.
       </div>
+    </div>
     
-      <div class='item-container'>
-        <div class='button-container'>
-          <input id='submitButton' type='button' class='item-button' value='SAVE'>
-        </div>
+    <div class='item-container'>
+      <div class='button-container'>
+        <input id='submitButton' type='button' class='item-button' value='SAVE'>
       </div>
+    </div>
   
-      <script src='pebble-slate/dist/js/slate.min.js'></script>
-      <script src='js/main.js'></script>
+    <script src='pebble-slate/dist/js/slate.min.js'></script>
+    <script src='js/main.js'></script>
   
-    </body>
+  </body>
 </html>
