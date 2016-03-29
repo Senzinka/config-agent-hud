@@ -23,12 +23,12 @@ function loadOptions() {
   var $AppKeyEmptyBarSameColor = $('#AppKeyEmptyBarSameColor');
 
   if (localStorage) {
-    $AppKeyTwentyFourHourFormat[0].checked = localStorage.agenthud.AppKeyTwentyFourHourFormat === 'true';
-    $AppKeyBackgroundColor[0].value = localStorage.agenthud.AppKeyBackgroundColor;
-    $AppKeyLabelColor[0].value = localStorage.agenthud.AppKeyLabelColor;
-    $AppKeyValueColor[0].value = localStorage.agenthud.AppKeyValueColor;
-    $AppKeyEmptyBarFilled[0].checked = localStorage.agenthud.AppKeyEmptyBarFilled === 'true';
-    $AppKeyEmptyBarSameColor[0].checked = localStorage.agenthud.AppKeyEmptyBarSameColor === 'true';
+    $AppKeyTwentyFourHourFormat[0].checked = localStorage.AppKeyTwentyFourHourFormat === 'true';
+    $AppKeyBackgroundColor[0].value = localStorage.AppKeyBackgroundColor;
+    $AppKeyLabelColor[0].value = localStorage.AppKeyLabelColor;
+    $AppKeyValueColor[0].value = localStorage.AppKeyValueColor;
+    $AppKeyEmptyBarFilled[0].checked = localStorage.AppKeyEmptyBarFilled === 'true';
+    $AppKeyEmptyBarSameColor[0].checked = localStorage.AppKeyEmptyBarSameColor === 'true';
   }
 }
 
@@ -49,12 +49,12 @@ function getAndStoreConfigData() {
     AppKeyEmptyBarSameColor: $AppKeyEmptyBarSameColor[0].checked
   };
 
-  localStorage.agenthud.AppKeyTwentyFourHourFormat = options.AppKeyTwentyFourHourFormat;
-  localStorage.agenthud.AppKeyBackgroundColor = options.AppKeyBackgroundColor;
-  localStorage.agenthud.AppKeyLabelColor = options.AppKeyLabelColor;
-  localStorage.agenthud.AppKeyValueColor = options.AppKeyValueColor;
-  localStorage.agenthud.AppKeyEmptyBarFilled = options.AppKeyEmptyBarFilled;
-  localStorage.agenthud.AppKeyEmptyBarSameColor = options.AppKeyEmptyBarSameColor;
+  localStorage.AppKeyTwentyFourHourFormat = options.AppKeyTwentyFourHourFormat;
+  localStorage.AppKeyBackgroundColor = options.AppKeyBackgroundColor;
+  localStorage.AppKeyLabelColor = options.AppKeyLabelColor;
+  localStorage.AppKeyValueColor = options.AppKeyValueColor;
+  localStorage.AppKeyEmptyBarFilled = options.AppKeyEmptyBarFilled;
+  localStorage.AppKeyEmptyBarSameColor = options.AppKeyEmptyBarSameColor;
 
   console.log('Got options: ' + JSON.stringify(options));
   return options;
